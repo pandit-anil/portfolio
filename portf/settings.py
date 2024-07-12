@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
 from django.contrib.messages import constants as messages
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'debug',
@@ -147,7 +151,6 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "info.demodjango@gmail.com"
-EMAIL_HOST_PASSWORD = "lkjo itht ppli pmjz"
-
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
